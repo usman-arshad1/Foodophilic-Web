@@ -1,5 +1,42 @@
 .side-navigation {
-  /* height: 100vh; */
-  height: 100px;
-  /* background-color: blue; */
+  height: 100%;
+  width: 278px;
+  border-right: 1px black solid;
+  background-color: #1c1b1f;
+  padding: 17px 27px;
+}
+
+.navigation-logo > img {
+  height: 104px;
+  width: 104px;
+}
+
+.navigation-item-container {
+  padding-left: 10px;
+  margin-top: 107px;
+}
+
+.navigation-profile-container {
+  display: flex;
+  align-items: center;
+}
+
+.navigation-profile-container img {
+  height: 68px;
+  width: 68px;
+  border-radius: 50%;
+  border: 1px solid white;
+  background-color: #ffffff62;
+}
+
+.navigation-profile-container p {
+  font-size: 24px;
+  padding-left: 24px;
+  color: white;
+}
+
+.stuff {
+  position: absolute;
+  bottom: 17px;
+  align-self: flex-end;
 }

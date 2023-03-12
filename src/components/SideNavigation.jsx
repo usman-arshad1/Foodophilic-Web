@@ -1,17 +1,52 @@
 import "./../styles/sideNavigation.css";
+import SideNavigationItem from "./SideNavigationItem";
+import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import RestaurantIcon from "@mui/icons-material/Restaurant";
+import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
+import ForumOutlinedIcon from "@mui/icons-material/ForumOutlined";
+import ReviewsOutlinedIcon from "@mui/icons-material/ReviewsOutlined";
 
-const SideNavigation = ({json}) => {
-  const {name, gender} = json;
-
+function SideNavigation() {
   return (
     <div className="side-navigation">
-      <a href="">{name}</a>
-      <a>{gender}</a>
-      <a>Recipes</a>
-      <a>Messages</a>
-      <a>Reviews</a>
+      <div className="navigation-logo">
+        <img src="./src/assets/smiley.png" alt="logo image" />
+      </div>
+
+      <div className="navigation-item-container">
+        <SideNavigationItem name="Home" path="/" icon={<HomeOutlinedIcon />} />
+        <SideNavigationItem
+          name="Restaurants"
+          path="/restaurant"
+          icon={<RestaurantIcon />}
+        />
+        <SideNavigationItem
+          name="Recipes"
+          path="/recipe"
+          icon={<ArticleOutlinedIcon />}
+        />
+        <SideNavigationItem
+          name="Messages"
+          path="/message"
+          icon={<ForumOutlinedIcon />}
+        />
+        <SideNavigationItem
+          name="Reviews"
+          path="/review"
+          icon={<ReviewsOutlinedIcon />}
+        />
+      </div>
+
+      <div className="stuff">
+        <div className="navigation-profile-container">
+          <div>
+            <img src="./src/assets/king-slime.webp" alt="user pp" />
+          </div>
+          <p>simrat39</p>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export { SideNavigation }
+export default SideNavigation;

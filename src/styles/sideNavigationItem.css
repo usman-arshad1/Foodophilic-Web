@@ -1,0 +1,31 @@
+.side-navigation-item {
+  color: white;
+  font-size: 24px;
+  padding: 5px 0;
+}
+
+.side-navigation-item a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.side-navigation-item span {
+  padding-left: 12px;
+}
+
+.side-navigation-item a:link {
+  color: white;
+}
+
+.side-navigation-item a:visited {
+  color: white;
+}
+
+.side-navigation-item a:hover {
+  color: aquamarine;
+}
+
+.side-navigation-item a:active {
+  color: white;
+}
