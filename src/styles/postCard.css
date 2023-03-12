@@ -1,0 +1,82 @@
+
+*{
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.card{
+    display: grid;
+    grid-template-rows: 2fr 8fr;
+    position: relative;
+    left: 30%;  
+    margin-top:5%;
+    height: 500px;
+    width: 35%;
+    min-width: 500px;
+    background: linear-gradient(0deg, rgba(208, 188, 255, 0.05), rgba(208, 188, 255, 0.05)), #1C1B1F;
+    box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.15), 0px 1px 2px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    z-index: 0;
+}
+
+.head{
+    grid-row: 1;    
+    height: 100%;
+    min-height: 100px;
+    display: grid;
+    grid-template-rows: 0;
+    grid-template-columns: 20% 80%;
+}
+.post{
+    grid-row:2;
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+}
+
+.img{
+    grid-column: 1;
+    position: relative;
+    width: 80%;
+    left: 15%;
+    margin-top: 10%;
+    border-radius: 100%;  
+    color: #1C1B1F;
+}
+.userInfo{
+    grid-column: 2;
+    margin-left: 2%;
+}
+
+.name{
+    position: relative; 
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 0;
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 5%;
+    letter-spacing: 0.1px;
+}
+
+.time{
+    grid-column: 2;
+    position: relative;
+    color: whitesmoke;
+}
+
+.desc{
+    grid-row: 1;
+    position: relative;
+    margin-left: 20px;
+    
+}
+
+.post-img{
+    grid-row: 2;
+    max-height: 280px;
+    display: block;
+    margin: auto;
+}
