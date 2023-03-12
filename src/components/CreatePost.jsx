@@ -7,22 +7,42 @@ import "./../styles/popUp.css";
 
 const CreatePost = () => {
   const [message, setMessage] = useState('');
+  const [bio, setBio] = useState('');
   const [tags, setTags] = useState([]);
 
-  const handleChange = (event) => {
+  const [selectedFile, setSelectedFile] = useState();
+	const [isFilePicked, setIsSelected] = useState(false);
+
+  const changeImageHandler = (event) => {
+    // console.log(URL.createObjectURL(event.target.files[0]))
+		setSelectedFile(URL.createObjectURL(event.target.files[0]));
+		setIsSelected(true);
+	};
+
+	const handleSubmission = () => {
+	};
+
+  const handleChangeMessage = (event) => {
     setMessage(event.target.value);
   }
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert(`The name you entered was: ${message}`)
+    const tagsText = tags.map((tag) => tag.message);
+    alert(`The name you entered was: ${tagsText}\nThe name you entered was: ${bio}`)
   }
 
   function addTag() {
-    setTags([...tags, {text: {message}, id: uuidv4()}]);
-    // console.log(tags);
+    setTags([...tags, {message}]);
 
     setMessage('');
+  }
+
+  const UploadImageFile = () => {
+    if (isFilePicked) {
+      return (<input className='custom-file-upload centeredUpload' type="file" name="file" onChange={changeImageHandler} />)
+    }
+    return (<input className='custom-file-upload cornerUpload' type="file" name="file" onChange={changeImageHandler} />)
   }
 
   return (
@@ -39,26 +59,26 @@ const CreatePost = () => {
           </div>
           <form className="content" onSubmit={handleSubmit}>
             <div className='imageUpload createItem'>
-              {/* <TODO>Upload image UI</TODO> */}
-              <div className='imageButton'>+ Upload Image</div>
+              <UploadImageFile />
+              <img src={selectedFile}></img>
+              {/* <div className='imageButton'>+ Upload Image</div> */}
             </div>
             <div className='tagsTitle'>Tags</div>
             <span className='tags createItem'>
               <span className='tags tagsContainer'>
                 {
                   tags.map((item) => {
-                    console.log(item);
-                    return (<div key={item.id} className='postTag'>{item.text.message}</div>)
+                    return (<div key={item.id} className='postTag'>{item.message}</div>)
                   })
                 }
                 <div className='addTagBox'>
-                  <input type="text" placeholder='Add tag...' className='inputTag' maxLength={20} onChange={handleChange} value={message}></input>
+                  <input type="text" placeholder='Add tag...' className='inputTag' maxLength={20} onChange={handleChangeMessage} value={message}></input>
                   <AddCircleOutlineOutlinedIcon className='addTag' onClick={() => { addTag(); }}></AddCircleOutlineOutlinedIcon> {/*Change function to add tag*/}
                 </div>
               </span>
             </span>
             <div className='postBio createItem'>
-              <textarea className='bioInput' placeholder='Enter text here'>
+              <textarea className='bioInput' placeholder='Enter text here (Max 255 characters)' onChange={(e) => setBio(e.target.value)} rows={5} maxLength={280}>
               </textarea>
             </div>
             <div className='actionButtons createItem'>
