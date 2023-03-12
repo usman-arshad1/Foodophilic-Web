@@ -68,8 +68,7 @@ function Profile({ numberPosts }) {
             <div className="username">@{UserProfile.getUsername()}</div>
 
             <div className="bio">
-              I am Sim, the Simmiest of rattiest of all Sims, ruler of
-              Simtarctica.
+              {UserProfile.getBio()}
             </div>
           </div>
         </div>
