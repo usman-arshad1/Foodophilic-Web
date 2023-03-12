@@ -1,30 +1,49 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import { SideNavigation } from './components/SideNavigation'
-import { Post } from './components/PostCard'
-import { LoginPage } from './components/Login'
-import './App.css'
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import ErrorView from "./views/ErrorView";
+import MainLayout from "./layouts/MainLayout";
+import Profile from "./views/Profile"
+import "./App.css";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <MainLayout />,
+    errorElement: <ErrorView />,
+    children: [
+      {
+        path: "/",
+        element: <div>Main view</div>,
+      },
+      {
+        path: "restaurant",
+        element: <div>Restaurants view</div>,
+      },
+      {
+        path: "recipe",
+        element: <div>Recipes view</div>,
+      },
+      {
+        path: "message",
+        element: <div>Messages view</div>,
+      },
+      {
+        path: "review",
+        element: <div>Reviews view</div>,
+      },
+      {
+        path: "profile",
+        element: <Profile user="Usman" username="ytiggiwS" numberOfPosts="200" />,
+      },
+    ],
+  },
+]);
 
 function App() {
-  
-  const [count, setCount] = useState(0)
-  const user1 = {
-    name: "Linus Tech Tip",
-    profileImg: "src/assets/404-4042710_circle-profile-picture-png-transparent-png.png",
-    
-  }
-
-  const post1 = {
-
-    time: "3h ago",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
-    foodImg: "src/assets/pizza-with-pineapple-and-thin-crust.jpg"
-  }
   return (
     <div className="App">
-        <LoginPage  />
+      <RouterProvider router={router} />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
