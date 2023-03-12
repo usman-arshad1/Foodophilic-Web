@@ -6,7 +6,7 @@ import { FirestoreProvider, useFirebaseApp } from "reactfire";
 import ErrorView from "./views/ErrorView";
 import MainLayout from "./layouts/MainLayout";
 import Profile from "./views/Profile";
-import Main from "./views/Main";
+import Main from "./views/MainView";
 
 import "./App.css";
 

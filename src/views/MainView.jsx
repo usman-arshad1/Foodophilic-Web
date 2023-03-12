@@ -3,7 +3,6 @@ import "./../styles/main.css";
 import { Post } from "../components/PostCard";
 import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import Button from "@mui/material/Button";
 import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
@@ -24,14 +23,6 @@ function Main() {
   const firestore = useFirestore();
 
   useEffect(() => {
-    // const userCollection = collection(firestore, "users");
-    // getDocs(userCollection).then((users) => {
-    //   users.forEach((user) => {
-    //     console.log("user", user.data());
-    //   });
-    // });
-
-    // use for posts
     const postCollection = collection(firestore, "posts");
     getDocs(postCollection).then((res) => {
       setPosts([...res.docs]);
