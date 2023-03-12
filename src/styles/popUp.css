@@ -20,18 +20,22 @@
   cursor: pointer;
 }
 
-.modal > .content > .tags {
-  display: flex;
-  flex-wrap: wrap;
+.tags {
+  display: inline-flex;
 }
 
-.modal > .content > .tags > div{
+.addTagBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tags > .postTag{
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5px 20px;
+  padding: 0 20px;
   height: 25px;
-  width: 50px;
   margin-right: 10px;
   border-radius: 5px;
   background-color: #C9B2FF;
@@ -43,11 +47,25 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
-  
+}
+
+.postTag {
   margin-bottom: 10px;
 }
 
+.tagsContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .addTag{
+  color: #C9B2FF;
+}
+
+.tagsTitle {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  font-size: 24px;
   color: #C9B2FF;
 }
 
@@ -82,6 +100,7 @@
 .imageUpload > .imageButton:hover {
   background-color: #C9B2FF;
   color: #212121;
+  cursor: pointer;
 }
 
 .postBio {
@@ -89,6 +108,7 @@
   font-size: 15px;
   height: 30vh;
 }
+
 
 .postBio > .bioInput{
   background-color: #212121;
@@ -125,6 +145,7 @@
 .actionButtons > .postButton:hover {
   background-color: #C9B2FF;
   color: #6750A4;
+  cursor: pointer;
 }
 
 
@@ -138,6 +159,7 @@
 .actionButtons > .locationButton:hover {
   color: #212121;
   background-color: #C9B2FF;
+  cursor: pointer;
 }
 
 
@@ -181,7 +203,7 @@
 .usernameInput{
   background-color: #212121;
   font-size: 15px;
-  width:  95%;
+  width:  100%;
   border: none;
   color: #C9B2FF;
   padding-top: 10px;
@@ -197,7 +219,7 @@
   background-color: #212121;
   border-radius: 25px;
   font-size: 15px;
-  width: 25%;
+  width: 35%;
   border: 2px solid #767676;
   color: #C9B2FF;
   padding-top: 10px;
@@ -220,9 +242,19 @@
 .editBox > textarea {
   background-color: #212121;
   font-size: 15px;
-  width:  99%;
+  width:  100%;
   border: none;
   color: #C9B2FF;
   resize: none;
   outline: none;
+}
+
+.inputTag {
+  background-color: #212121;
+  border: 1px solid #767676;
+  border-radius: 25px;
+  padding: 4px;
+  padding-left: 10px;
+  width: 100px;
+  color: #C9B2FF;
 }

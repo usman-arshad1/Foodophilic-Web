@@ -2,7 +2,6 @@ import React from 'react';
 import Popup from 'reactjs-popup';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 import "./../styles/popUp.css";
-
 const EditProfile = () => {
   return (
     <Popup
@@ -31,7 +30,7 @@ const EditProfile = () => {
             </span>
             <div className='emailInfo editBox componentProfileEdit'>
                 <label className='editLabel'>Email</label>
-                <textarea className='emailInfo popUpTextArea' placeholder='Enter email here' rows={2} maxLength={255}>Get email here
+                <textarea className='emailInfo popUpTextArea' placeholder='Enter email here' rows={2} maxLength={80}>Get email here
                 </textarea>
             </div>
             <div className='bioInfo editBox componentProfileEdit'>
@@ -48,5 +47,4 @@ const EditProfile = () => {
   </Popup>
   )
 }
-
 export { EditProfile }
