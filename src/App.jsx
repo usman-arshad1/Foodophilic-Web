@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import { SideNavigation } from './components/SideNavigation'
+import { CreatePost } from './components/CreatePost'
 import './App.css'
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
   return (
     <div className="App">
         <SideNavigation json={jsonThing} />
+        <CreatePost />
     </div>
   )
 }
