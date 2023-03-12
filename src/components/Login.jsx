@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 //firebase
-import { getDocs, getFirestore,collection } from "firebase/firestore";
+import { getDocs, getFirestore } from "firebase/firestore";
 import {
   FirebaseAppProvider,
   FirestoreProvider,
@@ -12,6 +12,8 @@ import {
   useFirebaseApp,
   useFirestoreCollection,
 } from "reactfire";
+import { firebaseConfig } from "../../firebaseAPI";
+import { collection } from "firebase/firestore";
 
 var userCollection;
 function Status() {

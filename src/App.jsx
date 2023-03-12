@@ -18,6 +18,7 @@ import {
   useFirestoreCollection,
 } from "reactfire";
 
+import { firebaseConfig } from "../firebaseAPI";
 
 var userCollection;
 var postCollection;
