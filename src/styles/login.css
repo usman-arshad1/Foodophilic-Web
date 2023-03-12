@@ -1,0 +1,112 @@
+
+.login-page{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    height: 100vh;
+}
+
+.login-logo{
+    max-height: 200px;
+    background-color: #343333;
+    margin-left: 97.5px;
+    margin-top: 1%;
+
+}
+
+.loginSection{
+    grid-column: 1;
+    background-color: #343333;
+}
+.login{
+    background-color: #343333;
+    margin-top: 5%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-page input{
+    margin-top: 10%;
+    background-color: #2B2B2B;
+    height:50px;
+    width: 80%;
+    padding-left: 2%;
+    border:none;
+    border-radius: 10px;
+    color:aliceblue;
+}
+
+.login-page button{
+    
+    border:none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 8px;
+    width: 150px;
+    height: 40px;
+    background: #6750A4;
+    border-radius: 100px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    color:aliceblue;
+    letter-spacing: 0.5px;
+    font-weight:300;
+}
+
+
+.login-page button:hover{
+    background-color: aliceblue;
+    color:#6750A4;
+    font-weight: 700;
+    border: 2px solid #6750A4;
+}
+
+.login-banner{
+    grid-column: 2;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 128px;
+    text-align: center;
+    color:aliceblue;
+    background-color: black;
+}
+
+.login-line{
+    margin-top: 10%;
+    width: 100%;
+    height: 1px;
+    border:none;
+    text-align: center;
+    background-color: #49454F;
+}
+
+#orText{
+    position: relative;
+    top:-16px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0);
+    color:#8F8F8F
+}
+
+.sign-up{
+    margin-top: 0%;
+}
+
+.login-forgetPassword{
+    width: 80%;
+    margin-top: 1%;
+    background: none;
+    color:#8F8F8F;
+    text-align: right;
+}
+
+
+.login-btn{
+    margin-top: 10%;
+}

@@ -3,8 +3,14 @@ import ErrorView from "./views/ErrorView";
 import MainLayout from "./layouts/MainLayout";
 import Profile from "./views/Profile"
 import "./App.css";
+import { Login } from "@mui/icons-material";
+import { LoginPage } from "./components/login";
 
 const router = createBrowserRouter([
+  {
+    path: "/login",
+    element: <LoginPage/>
+  },
   {
     path: "/",
     element: <MainLayout />,
@@ -34,8 +40,10 @@ const router = createBrowserRouter([
         path: "profile",
         element: <Profile user="Usman" username="ytiggiwS" numberPosts={200} />,
       },
+      
     ],
   },
+  
 ]);
 
 function App() {
