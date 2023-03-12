@@ -2,7 +2,6 @@ import React from 'react';
 import Popup from 'reactjs-popup';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 import "./../styles/popUp.css";
-
 const EditProfile = () => {
   return (
     <Popup
@@ -48,5 +47,4 @@ const EditProfile = () => {
   </Popup>
   )
 }
-
 export { EditProfile }
