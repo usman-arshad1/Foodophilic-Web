@@ -1,0 +1,30 @@
+.main-container {
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+.search {
+  background: #928da3;
+  width: fit-content;
+  border-radius: 28px;
+
+  position: relative;
+  left: 35%;
+  top: 10px;
+}
+
+.post {
+  background: gray;
+  outline-style: hidden;
+  width: fit-content;
+  border-radius: 28px;
+
+  position: relative;
+  left: 55%;
+  top: -31px;
+}
+
+.post span {
+  padding-left: 5px;
+  color: black;
+}

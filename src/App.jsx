@@ -2,12 +2,13 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorView from "./views/ErrorView";
 import MainLayout from "./layouts/MainLayout";
 import Profile from "./views/Profile"
+import Main from "./views/Main"
 import "./App.css";
 import { Login } from "@mui/icons-material";
 import { LoginPage } from "./components/login";
 
 //firebase
-import { getDocs, getFirestore } from "firebase/firestore";
+import { getDocs, getFirestore,collection } from "firebase/firestore";
 import {
   FirebaseAppProvider,
   FirestoreProvider,
@@ -16,8 +17,7 @@ import {
   useFirebaseApp,
   useFirestoreCollection,
 } from "reactfire";
-import { firebaseConfig } from "../firebaseAPI";
-import { collection } from "firebase/firestore";
+
 
 var userCollection;
 var postCollection;
@@ -33,7 +33,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <div>Main view</div>,
+        element: <Main/>,
       },
       {
         path: "restaurant",
