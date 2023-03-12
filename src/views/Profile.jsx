@@ -5,23 +5,23 @@ function Profile({ user, username, numberPosts }) {
   const posts = [
     {
       user: {
-        name: "name",
+        name: "Linus Tech Tips",
         profileImg: "src/assets/king-slime.webp",
       },
       post: {
-        time: "time",
-        desc: "description",
+        time: "3h ago",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
         foodImg: "./src/assets/pizza-with-pineapple-and-thin-crust.jpg",
       },
     },
     {
       user: {
-        name: "name",
+        name: "Linus Tech Tips",
         profileImg: "src/assets/king-slime.webp",
       },
       post: {
-        time: "time",
-        desc: "description",
+        time: "3h ago",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
         foodImg: "./src/assets/pizza-with-pineapple-and-thin-crust.jpg",
       },
     },
@@ -67,7 +67,7 @@ function Profile({ user, username, numberPosts }) {
 
       <div className="divider"></div>
 
-      <div className="body">
+      <div className="user-posts">
         {posts.map((post) => (
           <Post user={post.user} post={post.post} />
         ))}

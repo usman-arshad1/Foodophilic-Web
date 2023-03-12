@@ -1,3 +1,8 @@
+.profile-container {
+  overflow-y: scroll;
+  height: 100vh;
+}
+
 .profile-header {
   width: 100%;
   padding-bottom: 40px;
@@ -74,4 +79,10 @@
 
 .bio {
   padding: 20px 10px 0px 10px;
+}
+
+.user-posts {
+  display: grid;
+  row-gap: 50px;
+  margin: 50px auto;
 }
