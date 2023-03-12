@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorView from "./views/ErrorView";
 import MainLayout from "./layouts/MainLayout";
 import Profile from "./views/Profile"
+import Main from "./views/Main"
 import "./App.css";
 
 const router = createBrowserRouter([
@@ -12,7 +13,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <div>Main view</div>,
+        element: <Main/>,
       },
       {
         path: "restaurant",
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
       },
       {
         path: "profile",
-        element: <Profile user="Usman" username="ytiggiwS" numberOfPosts="200" />,
+        element: <Profile user="Usman" username="ytiggiwS" numberPosts={200} />,
       },
     ],
   },
