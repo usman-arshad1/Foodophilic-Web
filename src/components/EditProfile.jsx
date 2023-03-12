@@ -13,7 +13,7 @@ const EditProfile = () => {
       <div className="modal">
         <div className="header"> 
             <div className="button closePopup" onClick={() => { close();}}>
-                <span class="material-symbols-outlined"> close </span>
+                <CloseOutlinedIcon></CloseOutlinedIcon>
             </div>
         </div>
         <form className="content">
