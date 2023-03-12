@@ -41,8 +41,10 @@ function Login() {
 
   const handleSubmit = (event, navi) => {
     event.preventDefault();
+    
     getDocs(userCollection).then((users) => {
       users.forEach((user) => {
+        
         if (
           user.data().password == inputs.password &&
           user.data().username == inputs.username

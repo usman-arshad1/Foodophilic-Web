@@ -7,6 +7,7 @@ import RestaurantIcon from "@mui/icons-material/Restaurant";
 import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
 import ForumOutlinedIcon from "@mui/icons-material/ForumOutlined";
 import ReviewsOutlinedIcon from "@mui/icons-material/ReviewsOutlined";
+import UserProfile from "./userProfile";
 
 function SideNavigation() {
   return (
@@ -44,7 +45,7 @@ function SideNavigation() {
           <div>
             <img src="./src/assets/king-slime.webp" alt="user pp" />
           </div>
-          <p>simrat39</p>
+          <p>{UserProfile.getFirstName()}</p>
         </Link>
       </div>
     </div>

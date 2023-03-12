@@ -16,6 +16,8 @@ import {
   useFirestoreCollection,
 } from "reactfire";
 import { useState, useEffect } from "react";
+import UserProfile from "../components/userProfile";
+import { redirect, useNavigate } from "react-router-dom";
 
 function Main() {
   const [posts, setPosts] = useState([]);
@@ -28,6 +30,10 @@ function Main() {
       setPosts([...res.docs]);
     });
   }, []);
+  if(UserProfile.getFirstName() == null){
+    const Navigate = useNavigate();
+    Navigate("/login");
+  }
 
   return (
     <div className="main-container">

@@ -46,7 +46,7 @@ const router = createBrowserRouter([
       },
       {
         path: "profile",
-        element: <Profile user="Usman" username="ytiggiwS" numberPosts={200} />,
+        element: <Profile numberPosts={200} />,
       },
     ],
   },
