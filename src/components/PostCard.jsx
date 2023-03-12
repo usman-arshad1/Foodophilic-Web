@@ -1,6 +1,6 @@
 import "./../styles/postCard.css";
 
-const Post = ({ key, post }) => {
+const Post = ({ post }) => {
   const { location, metadata, postDate, postType, tags, user, userID } = post;
 
   const getDateFromSeconds = (seconds) => {
