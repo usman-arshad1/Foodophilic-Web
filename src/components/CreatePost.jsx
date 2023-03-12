@@ -22,12 +22,24 @@ const CreatePost = () => {
                 {/* <TODO>Upload image UI</TODO> */}
                 <div className='imageButton'>+ Upload Image</div>
             </div>
-            <span className='tags createItem'>
+            <div className='tags createItem'>
+                <div className='postTag'> Tag </div>
+                <div className='postTag'> Tag </div>
+                <div className='postTag'> Tag </div>
+                <div className='postTag'> Tag </div>
+                <div className='postTag'> Tag </div>
+                <div className='postTag'> Tag </div>
+                <div className='postTag'> Tag </div>
+                <div className='postTag'> Tag </div>
+                <div className='postTag'> Tag </div>
+                <div className='postTag'> Tag </div>
+                <div className='postTag'> Tag </div>
+                <div className='postTag'> Tag </div>
                 <div className='postTag'> Tag </div>
                 <div className='postTag'> Tag </div>
                 <div className='postTag'> Tag </div>
                 <AddCircleOutlineOutlinedIcon className='addTag' onClick={() => { close();}}></AddCircleOutlineOutlinedIcon> {/*Change function to add tag*/}
-            </span>
+            </div>
             <div className='postBio createItem'>
                 <textarea className='bioInput' placeholder='Enter text here'>
                 </textarea>
