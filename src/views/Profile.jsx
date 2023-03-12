@@ -1,31 +1,27 @@
 import { Post } from "../components/PostCard";
 import "./../styles/profile.css";
+import { getDocs, getFirestore, collection } from "firebase/firestore";
+import {
+  FirebaseAppProvider,
+  FirestoreProvider,
+  useFirestoreDocData,
+  useFirestore,
+  useFirebaseApp,
+  useFirestoreCollection,
+} from "reactfire";
+import { useState, useEffect } from "react";
 
 function Profile({ user, username, numberPosts }) {
-  const posts = [
-    {
-      user: {
-        name: "Linus Tech Tips",
-        profileImg: "src/assets/king-slime.webp",
-      },
-      post: {
-        time: "3h ago",
-        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
-        foodImg: "./src/assets/pizza-with-pineapple-and-thin-crust.jpg",
-      },
-    },
-    {
-      user: {
-        name: "Linus Tech Tips",
-        profileImg: "src/assets/king-slime.webp",
-      },
-      post: {
-        time: "3h ago",
-        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
-        foodImg: "./src/assets/pizza-with-pineapple-and-thin-crust.jpg",
-      },
-    },
-  ];
+  const [posts, setPosts] = useState([]);
+
+  const firestore = useFirestore();
+
+  useEffect(() => {
+    const postCollection = collection(firestore, "posts");
+    getDocs(postCollection).then((res) => {
+      setPosts([...res.docs]);
+    });
+  }, []);
 
   return (
     <div className="profile-container">
@@ -49,13 +45,13 @@ function Profile({ user, username, numberPosts }) {
           </div>
           <div className="profile-header-info">
             <div className="profile-name-post-number-container">
-              <div className="profile-name">{user}</div>
+              <div className="profile-name">{UserProfile.getFirstName()}</div>
               <div className="post-number">
                 <span>{numberPosts}</span> Posts
               </div>
             </div>
 
-            <div className="username">@{username}</div>
+            <div className="username">@{UserProfile.getUsername()}</div>
 
             <div className="bio">
               I am Sim, the Simmiest of rattiest of all Sims, ruler of
@@ -68,8 +64,8 @@ function Profile({ user, username, numberPosts }) {
       <div className="divider"></div>
 
       <div className="user-posts">
-        {posts.map((post) => (
-          <Post user={post.user} post={post.post} />
+        {posts.map((post, index) => (
+          <Post key={index} post={post.data()} />
         ))}
       </div>
     </div>

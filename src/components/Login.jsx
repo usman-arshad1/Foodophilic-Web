@@ -1,6 +1,6 @@
 import "./../styles/login.css";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 //firebase
 import { getDocs, getFirestore } from "firebase/firestore";
@@ -15,7 +15,13 @@ import {
 import { firebaseConfig } from "../../firebaseAPI";
 import { collection } from "firebase/firestore";
 
+//user storage
+
+import UserProfile from "./userProfile";
+
+
 var userCollection;
+
 function Status() {
   const firestore = useFirestore();
 
@@ -40,8 +46,14 @@ function Login() {
         if (
           user.data().password == inputs.password &&
           user.data().username == inputs.username
-        )
-          navi("/");
+        ){
+            
+            UserProfile.setFirstName(user.data().firstName);
+            UserProfile.setUsername(user.data().username)
+            UserProfile.setUserID(user.id)
+              navi("/");
+        }
+        
       });
     });
   };
