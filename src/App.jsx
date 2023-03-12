@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorView from "./views/ErrorView";
 import MainLayout from "./layouts/MainLayout";
+import Profile from "./views/Profile"
 import "./App.css";
 
 const router = createBrowserRouter([
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
       },
       {
         path: "profile",
-        element: <div>Profile view</div>,
+        element: <Profile user="Usman" username="ytiggiwS" numberOfPosts="200" />,
       },
     ],
   },

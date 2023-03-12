@@ -1,6 +1,6 @@
 import "./../styles/profile.css";
 
-function Profile({ user, username, numberPosts,profile }) {
+function Profile({ user, username, numberPosts }) {
     return (
         <div className='profile'>
                     <img src=".\src\assets\banhmi.png" alt="No Image Found" />
