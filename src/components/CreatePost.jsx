@@ -16,21 +16,21 @@ const CreatePost = () => {
             </div>
         </div>
         <form className="content">
-            <div className='imageUpload'>
+            <div className='imageUpload createItem'>
                 {/* <TODO>Upload image UI</TODO> */}
                 <div className='imageButton'>+ Upload Image</div>
             </div>
-            <span className='tags'>
+            <span className='tags createItem'>
                 <div className='postTag'> Tag </div>
                 <div className='postTag'> Tag </div>
                 <div className='postTag'> Tag </div>
                 <div className='addTag'><span class="material-symbols-outlined">add_circle</span></div>
             </span>
-            <div className='postBio'>
+            <div className='postBio createItem'>
                 <textarea className='bioInput' placeholder='Enter text here'>
                 </textarea>
             </div>
-            <div className='actionButtons'>
+            <div className='actionButtons createItem'>
                 <div className='actButtons locationButton'>Add Location</div>
                 <button className='actButtons postButton'>Post</button>
             </div>
