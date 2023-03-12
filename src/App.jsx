@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import { SideNavigation } from './components/SideNavigation'
 import { Post } from './components/PostCard'
+import { LoginPage } from './components/Login'
 import './App.css'
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
   }
   return (
     <div className="App">
-        <Post user={user1} post = {post1} />
+        <LoginPage  />
     </div>
   )
 }
