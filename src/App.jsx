@@ -8,6 +8,10 @@ import { LoginPage } from "./components/login";
 
 const router = createBrowserRouter([
   {
+    path: "/login",
+    element: <LoginPage/>
+  },
+  {
     path: "/",
     element: <MainLayout />,
     errorElement: <ErrorView />,
@@ -39,10 +43,7 @@ const router = createBrowserRouter([
       
     ],
   },
-  {
-    path: "/login",
-    element: <LoginPage/>
-  }
+  
 ]);
 
 function App() {
