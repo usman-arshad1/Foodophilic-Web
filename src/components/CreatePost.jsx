@@ -1,8 +1,21 @@
 import React, { createElement, useState, useEffect  } from 'react';
 import Popup from 'reactjs-popup';
+import { v4 as uuid } from 'uuid';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
 import "./../styles/popUp.css";
+
+import { initializeApp } from "firebase/app";
+import { addDoc, getFirestore,collection } from "firebase/firestore";
+import { getStorage, ref, uploadBytes } from "firebase/storage";
+import { firebaseConfig } from "../../firebaseAPI";
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+// Initialize Cloud Firestore and get a reference to the service
+const db = getFirestore(app);
+const storage = getStorage();
 
 const CreatePost = () => {
   const [message, setMessage] = useState('');
@@ -14,14 +27,9 @@ const CreatePost = () => {
 	const [isFilePicked, setIsSelected] = useState(false);
 
   const changeImageHandler = (event) => {
-    // console.log(URL.createObjectURL(event.target.files[0]))
-
 		setSelectedFile(event.target.files[0]);
     setImageLink(URL.createObjectURL(event.target.files[0]));
 		setIsSelected(true);
-	};
-
-	const handleSubmission = () => {
 	};
 
   const handleChangeMessage = (event) => {
@@ -30,8 +38,35 @@ const CreatePost = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    const dbRef = collection(db, "posts");
     const tagsText = tags.map((tag) => tag.message);
-    alert(`The name you entered was: ${tagsText}\nThe name you entered was: ${bio}`)
+    var date = new Date()
+    var imgId = uuid();
+    const storageRef = ref(storage, imgId);
+    uploadBytes(storageRef, selectedFile).then((snapshot) => {
+      console.log("Uploaded a file!");
+    })
+    const data = {
+      location:"",
+      metadata: {
+        images: [imgId],
+        text: bio
+      },
+      postDate: date,
+      postType: "review",
+      tags: tagsText,
+      user: {
+        firstName: "GET FIRST NAME",
+        userName: "GET USER NAME"
+      },
+      userID: "GET USER ID"
+    }
+    addDoc(dbRef, data).then(docRef => {
+      console.log("Document added successfully");
+    }).catch(error => {
+      console.log(error);
+    });
   }
 
   function addTag() {
