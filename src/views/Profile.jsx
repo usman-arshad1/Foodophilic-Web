@@ -11,15 +11,29 @@ import {
 } from "reactfire";
 import { useState, useEffect } from "react";
 
-function Profile({ user, username, numberPosts }) {
+import UserProfile from "../components/userProfile";
+
+function Profile({ numberPosts }) {
   const [posts, setPosts] = useState([]);
 
   const firestore = useFirestore();
+  const postCollection = collection(firestore, "posts");
 
   useEffect(() => {
-    const postCollection = collection(firestore, "posts");
     getDocs(postCollection).then((res) => {
-      setPosts([...res.docs]);
+      console.log("collection",res);
+      let post_Collection = [];
+      res.forEach((a)=>{
+        
+        console.log(a);
+        if(a.data().userID == UserProfile.getUserID()){
+          console.log("hit");
+          post_Collection.push(a);
+          
+        }
+      })
+      setPosts(post_Collection);
+      
     });
   }, []);
 
@@ -47,7 +61,7 @@ function Profile({ user, username, numberPosts }) {
             <div className="profile-name-post-number-container">
               <div className="profile-name">{UserProfile.getFirstName()}</div>
               <div className="post-number">
-                <span>{numberPosts}</span> Posts
+                <span>{posts.length}</span> Posts
               </div>
             </div>
 
