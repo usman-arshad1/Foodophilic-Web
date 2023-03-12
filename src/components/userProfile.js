@@ -3,6 +3,7 @@ var UserProfile = (function() {
     var firstName = "";
     var userID = "";
     var bio = "";
+    var pic = "";
   
     var getUsername = function() {
       return username;    
@@ -35,6 +36,16 @@ var UserProfile = (function() {
       bio = new_bio;     
     };
 
+    var getPic = function() {
+      return bio;    
+    };
+  
+    var setPic = function(new_pic) {
+      bio = new_pic;     
+    };
+
+
+
     return {
       getUsername:  getUsername,
       setUsername: setUsername,
@@ -43,7 +54,9 @@ var UserProfile = (function() {
       getUserID : getUserID,
       setUserID : setUserID,
       getBio : getBio,
-      setBio : setBio
+      setBio : setBio,
+      getPic : getPic,
+      setPic : setPic
     }
   
   })();

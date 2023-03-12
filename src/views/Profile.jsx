@@ -13,6 +13,9 @@ import { useState, useEffect } from "react";
 
 import UserProfile from "../components/userProfile";
 
+import multiavatar from '@multiavatar/multiavatar/esm'
+let svgCode = multiavatar(String(UserProfile.getUserID()));
+
 function Profile({ numberPosts }) {
   const [posts, setPosts] = useState([]);
 
@@ -46,11 +49,9 @@ function Profile({ numberPosts }) {
 
         <div className="profile-header-info-container">
           <div className="profile-photo-button-container">
-            <img
-              className="profile-photo"
-              src=".\src\assets\istockphoto-1223671392-612x612.jpg"
-              alt=""
-            />
+            <div
+              className="profile-photo" dangerouslySetInnerHTML={{__html : svgCode}}
+            ></div>
             <div className="edit-button-wrapper">
               <button className="edit-button" type="button">
                 Edit Profile

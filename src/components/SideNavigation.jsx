@@ -8,6 +8,9 @@ import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
 import ForumOutlinedIcon from "@mui/icons-material/ForumOutlined";
 import ReviewsOutlinedIcon from "@mui/icons-material/ReviewsOutlined";
 import UserProfile from "./userProfile";
+import multiavatar from "@multiavatar/multiavatar/esm";
+
+var svgCode =  multiavatar(String(UserProfile.getUserID()));
 
 function SideNavigation() {
   return (
@@ -42,8 +45,8 @@ function SideNavigation() {
 
       <div className="side-nav-profile">
         <Link to="/profile" className="navigation-profile-container">
-          <div>
-            <img src="./src/assets/king-slime.webp" alt="user pp" />
+          <div class = "svg"dangerouslySetInnerHTML={{__html:svgCode}}>
+           
           </div>
           <p>{UserProfile.getFirstName()}</p>
         </Link>

@@ -21,7 +21,7 @@
   align-items: center;
 }
 
-.navigation-profile-container img {
+.svg,.navigation-profile-container img {
   height: 68px;
   width: 68px;
   border-radius: 50%;
