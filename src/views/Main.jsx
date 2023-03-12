@@ -36,22 +36,29 @@ function Main() {
 
   return (
     <div className="main-container">
-      <div className="search">
-        <IconButton sx={{ p: "10px" }} aria-label="menu">
-          <MenuIcon />
-        </IconButton>
-        <InputBase sx={{ ml: 1, flex: 1 }} placeholder="Search" />
-        <IconButton type="button" sx={{ p: "10px" }} aria-label="search">
-          <SearchIcon />
-        </IconButton>
+      <div className="main-shit">
+        <div className="main-view-header">
+          <div className="searchbar">
+            <InputBase
+              sx={{ width: "100%", padding: "0 20px" }}
+              placeholder="Search"
+            />
+            <div className="search-button">
+              <IconButton type="button" aria-label="search">
+                <SearchIcon />
+              </IconButton>
+            </div>
+          </div>
+          <Button
+            variant="contained"
+            sx={{ borderRadius: "25px", backgroundColor: "green" }}
+            startIcon={<AddCircleOutlineOutlinedIcon />}
+          >
+            Create
+          </Button>
+        </div>
       </div>
 
-      <div className="post">
-        <Button variant="text">
-          <AddCircleOutlineOutlinedIcon color="action" />
-          <span>Create</span>
-        </Button>
-      </div>
       <div className="profileContainer">
         <div className="user-posts">
           {posts.map((post) => (

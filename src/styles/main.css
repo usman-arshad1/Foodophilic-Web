@@ -2,15 +2,27 @@
   overflow-y: scroll;
   height: 100vh;
 }
+.main-shit {
+  margin-top: 17px;
+  display: flex;
+  justify-content: center;
+  min-width: 535px;
+}
 
-.search {
+.main-view-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.searchbar {
+  display: flex;
+  min-width: 535px;
   background: #928da3;
-  width: fit-content;
   border-radius: 28px;
+}
 
-  position: relative;
-  left: 35%;
-  top: 10px;
+.search-button {
+  padding-right: 10px;
 }
 
 .post {
@@ -18,10 +30,6 @@
   outline-style: hidden;
   width: fit-content;
   border-radius: 28px;
-
-  position: relative;
-  left: 55%;
-  top: -31px;
 }
 
 .post span {
