@@ -341,3 +341,19 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.createButton {
+  border-radius: 25px;
+  border: 1px solid #4e388b;
+  background-color: #27222b;
+  color: white;
+  padding: 10px 20px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.createButton:hover {
+  border: 1px solid #27222b;
+  background-color: #4e388b;
+  color: #d0bcff ;
+}

@@ -86,7 +86,7 @@ const CreatePost = () => {
 
   return (
     <Popup
-      trigger={<button className="button"> Create Post </button>}
+      trigger={<button className="button createButton"> Create Post </button>}
       modal
       nested>
       {close => (
@@ -130,4 +130,4 @@ const CreatePost = () => {
   )
 }
 
-export { CreatePost }
+export default CreatePost;
