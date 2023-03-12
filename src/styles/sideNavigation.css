@@ -35,8 +35,24 @@
   color: white;
 }
 
-.stuff {
+.side-nav-profile {
   position: absolute;
   bottom: 17px;
   align-self: flex-end;
+}
+
+.side-nav-profile a {
+  text-decoration: none;
+}
+
+.side-nav-profile a:link {
+  color: white;
+}
+
+.side-nav-profile a:visited {
+  color: white;
+}
+
+.side-nav-profile a:active {
+  color: white;
 }
