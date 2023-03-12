@@ -53,6 +53,7 @@ function Login() {
             UserProfile.setFirstName(user.data().firstName);
             UserProfile.setUsername(user.data().username)
             UserProfile.setUserID(user.id)
+            UserProfile.setBio(user.data().bio);
               navi("/");
         }
         

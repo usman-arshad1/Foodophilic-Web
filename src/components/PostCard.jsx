@@ -1,7 +1,15 @@
 import "./../styles/postCard.css";
+import { getStorage, ref, getDownloadURL } from "firebase/storage";
 
 const Post = ({ post }) => {
   const { location, metadata, postDate, postType, tags, user, userID } = post;
+
+  const storage = getStorage();
+getDownloadURL(ref(storage, post.metadata.images[0]))
+  .then((url) => {
+    const img = document.querySelector("#post-image" + metadata.images[0]);
+    img.setAttribute('src', url);
+  })
 
   const getDateFromSeconds = (seconds) => {
     const t = new Date(1970, 0, 1); // Epoch
@@ -35,7 +43,8 @@ const Post = ({ post }) => {
       <div className="post-description">{metadata.text}</div>
 
       <img
-        className="post-image"
+        id={"post-image" + metadata.images[0]}
+        className = "post-image"
         src={"./src/assets/pizza-with-pineapple-and-thin-crust.jpg"}
         alt="Not Found"
       />

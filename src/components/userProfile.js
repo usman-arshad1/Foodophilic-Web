@@ -2,33 +2,38 @@ var UserProfile = (function() {
     var username = "";
     var firstName = "";
     var userID = "";
+    var bio = "";
   
     var getUsername = function() {
-      return username;    // Or pull this from cookie/localStorage
+      return username;    
     };
   
     var setUsername = function(name) {
       username = name;     
-      
     };
     var getFirstName = function() {
-      return firstName;    // Or pull this from cookie/localStorage
+      return firstName;    
     };
   
     var setFirstName = function(new_firstName) {
       firstName = new_firstName;     
-      
     };
 
     var getUserID = function() {
-      return userID;    // Or pull this from cookie/localStorage
+      return userID;    
     };
   
     var setUserID = function(new_userID) {
       userID = new_userID;     
-      
     };
 
+    var getBio = function() {
+      return bio;    
+    };
+  
+    var setBio = function(new_bio) {
+      bio = new_bio;     
+    };
 
     return {
       getUsername:  getUsername,
@@ -36,7 +41,9 @@ var UserProfile = (function() {
       getFirstName : getFirstName,
       setFirstName : setFirstName,
       getUserID : getUserID,
-      setUserID : setUserID 
+      setUserID : setUserID,
+      getBio : getBio,
+      setBio : setBio
     }
   
   })();
