@@ -66,7 +66,7 @@ function Login() {
       <div className="login-page">
         <div className="loginSection">
           <img
-            src="src\assets\Food_Network_logo.svg.png"
+            src="src\assets\logo.png"
             className="login-logo"
           ></img>
 
