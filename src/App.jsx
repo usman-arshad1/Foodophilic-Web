@@ -5,9 +5,22 @@ import Profile from "./views/Profile"
 import "./App.css";
 import { Login } from "@mui/icons-material";
 import { LoginPage } from "./components/login";
-import { firebaseConfig } from "../firebaseAPI";
-import { FirebaseAppProvider, FirestoreProvider, useFirestoreDocData, useFirestore, useFirebaseApp } from 'reactfire';
 
+//firebase
+import { getDocs, getFirestore } from "firebase/firestore";
+import {
+  FirebaseAppProvider,
+  FirestoreProvider,
+  useFirestoreDocData,
+  useFirestore,
+  useFirebaseApp,
+  useFirestoreCollection,
+} from "reactfire";
+import { firebaseConfig } from "../firebaseAPI";
+import { collection } from "firebase/firestore";
+
+var userCollection;
+var postCollection;
 const router = createBrowserRouter([
   {
     path: "/login",
@@ -47,13 +60,47 @@ const router = createBrowserRouter([
   },
   
 ]);
+function Status() {
+  const firestore = useFirestore();
+
+  userCollection = collection(firestore, "users");
+  getDocs(userCollection).then((users) => {
+    users.forEach((user) =>{
+      console.log("user", user.data());
+    })
+  }) 
+
+  postCollection = collection(firestore, 'posts');
+  // use for posts
+  getDocs(postCollection).then((posts) => {
+    posts.forEach((post) =>{
+      console.log("post", post.data());
+    })
+  }) 
+  //till here
+  return ;
+}
+
+function ConnectToDB(){
+  const firestoreInstance = getFirestore(useFirebaseApp());
+  return(
+  <FirestoreProvider sdk={firestoreInstance}>
+    <Status/>
+  </FirestoreProvider>)
+}
 
 function App() {
   return (
     <div className="App">
+      <FirebaseAppProvider firebaseConfig={firebaseConfig}>
+        <ConnectToDB/>
       <RouterProvider router={router} />
+      </FirebaseAppProvider>
     </div>
   );
+
+  
 }
+
 
 export default App;

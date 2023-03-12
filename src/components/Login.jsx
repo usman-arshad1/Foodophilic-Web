@@ -21,7 +21,7 @@ function Status() {
 
   userCollection = collection(firestore, "users");
 
-  return <div></div>;
+  return;
 }
 
 function Login() {
