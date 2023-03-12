@@ -2,10 +2,10 @@ import React from 'react';
 import Popup from 'reactjs-popup';
 import "./../styles/popUp.css";
 
-const CreatePost = () => {
+const EditProfile = () => {
   return (
     <Popup
-    trigger={<button className="button"> Create Post </button>}
+    trigger={<button className="button"> Edit Profile </button>}
     modal
     nested>
     {close => (
@@ -41,4 +41,4 @@ const CreatePost = () => {
   )
 }
 
-export { CreatePost }
+export { EditProfile }
