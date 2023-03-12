@@ -51,13 +51,13 @@ function Profile({ user, username, numberPosts }) {
           </div>
           <div className="profile-header-info">
             <div className="profile-name-post-number-container">
-              <div className="profile-name">{user}</div>
+              <div className="profile-name">{UserProfile.getFirstName()}</div>
               <div className="post-number">
                 <span>{numberPosts}</span> Posts
               </div>
             </div>
 
-            <div className="username">@{username}</div>
+            <div className="username">{UserProfile.getUsername()}</div>
 
             <div className="bio">
               I am Sim, the Simmiest of rattiest of all Sims, ruler of
