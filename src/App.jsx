@@ -7,6 +7,7 @@ import "./App.css";
 import { Login } from "@mui/icons-material";
 import { LoginPage } from "./components/login";
 
+
 //firebase
 import { getDocs, getFirestore,collection } from "firebase/firestore";
 import {
@@ -65,19 +66,19 @@ function Status() {
   const firestore = useFirestore();
 
   userCollection = collection(firestore, "users");
-  getDocs(userCollection).then((users) => {
-    users.forEach((user) =>{
-      console.log("user", user.data());
-    })
-  }) 
+  // getDocs(userCollection).then((users) => {
+  //   users.forEach((user) =>{
+  //     console.log("user", user.data());
+  //   })
+  // }) 
 
-  postCollection = collection(firestore, 'posts');
-  // use for posts
-  getDocs(postCollection).then((posts) => {
-    posts.forEach((post) =>{
-      console.log("post", post.data());
-    })
-  }) 
+  // postCollection = collection(firestore, 'posts');
+  // // use for posts
+  // getDocs(postCollection).then((posts) => {
+  //   posts.forEach((post) =>{
+  //     console.log("post", post.data());
+  //   })
+  // }) 
   //till here
   return ;
 }

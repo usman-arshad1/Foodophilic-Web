@@ -1,7 +1,9 @@
 import { Post } from "../components/PostCard";
 import "./../styles/profile.css";
+import UserProfile from "../components/userProfile";
 
 function Profile({ user, username, numberPosts }) {
+  console.log(UserProfile.getFirstName(),UserProfile.getUserID());
   const posts = [
     {
       user: {
