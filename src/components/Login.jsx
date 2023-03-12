@@ -1,6 +1,6 @@
 import "./../styles/login.css";
 
-import { Navigate, redirect } from "react-router-dom";
+import { Navigate, redirect, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import ReactDOM from "react-dom/client";
 import { doc, getDocs, getFirestore } from "firebase/firestore";
@@ -43,7 +43,9 @@ function Login() {
         users.forEach((user)=>{
         if(user.data().password == inputs.password && user.data().username == inputs.username)
         console.log("logged in")
-        redirect("/");
+        const navigate = useNavigate();
+         navigate('/');
+         return(<div></div>)
         })
     });
     
