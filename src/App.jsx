@@ -9,6 +9,10 @@ import Profile from "./views/Profile";
 import Main from "./views/MainView";
 
 import "./App.css";
+import { Login } from "@mui/icons-material";
+
+
+import { firebaseConfig } from "../firebaseAPI";
 
 const router = createBrowserRouter([
   {

@@ -15,6 +15,11 @@ import {
 import { firebaseConfig } from "../../firebaseAPI";
 import { collection } from "firebase/firestore";
 
+//user storage
+
+import UserProfile from "./userProfile";
+
+
 var userCollection;
 
 function Status() {
@@ -41,8 +46,14 @@ function Login() {
         if (
           user.data().password == inputs.password &&
           user.data().username == inputs.username
-        )
-          navi("/");
+        ){
+            
+            UserProfile.setFirstName(user.data().firstName);
+            UserProfile.setUsername(user.data().username)
+            UserProfile.setUserID(user.id)
+              navi("/");
+        }
+        
       });
     });
   };
