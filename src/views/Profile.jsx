@@ -1,6 +1,32 @@
+import { Post } from "../components/PostCard";
 import "./../styles/profile.css";
 
 function Profile({ user, username, numberPosts }) {
+  const posts = [
+    {
+      user: {
+        name: "name",
+        profileImg: "src/assets/king-slime.webp",
+      },
+      post: {
+        time: "time",
+        desc: "description",
+        foodImg: "./src/assets/pizza-with-pineapple-and-thin-crust.jpg",
+      },
+    },
+    {
+      user: {
+        name: "name",
+        profileImg: "src/assets/king-slime.webp",
+      },
+      post: {
+        time: "time",
+        desc: "description",
+        foodImg: "./src/assets/pizza-with-pineapple-and-thin-crust.jpg",
+      },
+    },
+  ];
+
   return (
     <div className="profile-container">
       <div className="profile-header">
@@ -41,7 +67,11 @@ function Profile({ user, username, numberPosts }) {
 
       <div className="divider"></div>
 
-      <div className="body"></div>
+      <div className="body">
+        {posts.map((post) => (
+          <Post user={post.user} post={post.post} />
+        ))}
+      </div>
     </div>
   );
 }
