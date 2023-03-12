@@ -49,12 +49,11 @@ function Login() {
           user.data().password == inputs.password &&
           user.data().username == inputs.username
         ){
-            
             UserProfile.setFirstName(user.data().firstName);
             UserProfile.setUsername(user.data().username)
             UserProfile.setUserID(user.id)
             UserProfile.setBio(user.data().bio);
-              navi("/");
+              navi("/main");
         }
         
       });
@@ -105,7 +104,7 @@ function Login() {
           </form>
         </div>
         <div className="login-banner">
-          There is no love sincerer than the love of food
+          <img src="src\assets\banner_image.webp" alt="Not found" />
         </div>
       </div>
     </FirestoreProvider>

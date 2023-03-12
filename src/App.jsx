@@ -16,16 +16,16 @@ import { firebaseConfig } from "../firebaseAPI";
 
 const router = createBrowserRouter([
   {
-    path: "/login",
+    path: "/",
     element: <LoginPage />,
   },
   {
-    path: "/",
+    path: "/main",
     element: <MainLayout />,
     errorElement: <ErrorView />,
     children: [
       {
-        path: "/",
+        path: "",
         element: <Main />,
       },
       {

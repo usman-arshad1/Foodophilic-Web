@@ -10,9 +10,11 @@ import ReviewsOutlinedIcon from "@mui/icons-material/ReviewsOutlined";
 import UserProfile from "./userProfile";
 import multiavatar from "@multiavatar/multiavatar/esm";
 
-var svgCode =  multiavatar(String(UserProfile.getUserID()));
+
 
 function SideNavigation() {
+  var svgCode = multiavatar(String(UserProfile.getUserID()));
+  console.log(svgCode);
   return (
     <div className="side-navigation">
       <div className="navigation-logo">
@@ -20,34 +22,35 @@ function SideNavigation() {
       </div>
 
       <div className="navigation-item-container">
-        <SideNavigationItem name="Home" path="/" icon={<HomeOutlinedIcon />} />
+        <SideNavigationItem name="Home" path="/main" icon={<HomeOutlinedIcon />} />
         <SideNavigationItem
           name="Restaurants"
-          path="/restaurant"
+          path="/main/restaurant"
           icon={<RestaurantIcon />}
         />
         <SideNavigationItem
           name="Recipes"
-          path="/recipe"
+          path="/main/recipe"
           icon={<ArticleOutlinedIcon />}
         />
         <SideNavigationItem
           name="Messages"
-          path="/message"
+          path="/main/message"
           icon={<ForumOutlinedIcon />}
         />
         <SideNavigationItem
           name="Reviews"
-          path="/review"
+          path="/main/review"
           icon={<ReviewsOutlinedIcon />}
         />
       </div>
 
       <div className="side-nav-profile">
-        <Link to="/profile" className="navigation-profile-container">
-          <div class = "svg"dangerouslySetInnerHTML={{__html:svgCode}}>
-           
-          </div>
+        <Link to="/main/profile" className="navigation-profile-container">
+          <div
+            className="svg"
+            dangerouslySetInnerHTML={{ __html: svgCode }}
+          ></div>
           <p>{UserProfile.getFirstName()}</p>
         </Link>
       </div>

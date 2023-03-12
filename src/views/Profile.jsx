@@ -14,9 +14,10 @@ import { useState, useEffect } from "react";
 import UserProfile from "../components/userProfile";
 
 import multiavatar from '@multiavatar/multiavatar/esm'
-let svgCode = multiavatar(String(UserProfile.getUserID()));
+
 
 function Profile({ numberPosts }) {
+  let svgCode = multiavatar(String(UserProfile.getUserID()));
   const [posts, setPosts] = useState([]);
 
   const firestore = useFirestore();
@@ -44,7 +45,7 @@ function Profile({ numberPosts }) {
     <div className="profile-container">
       <div className="profile-header">
         <div className="banner-image">
-          <img src=".\src\assets\banhmi.png" alt="banner image" />
+          <img src="./../src/assets/banhmi.png" alt="banner image" />
         </div>
 
         <div className="profile-header-info-container">
