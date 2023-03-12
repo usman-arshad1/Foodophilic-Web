@@ -18,7 +18,8 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.9.0",
     "reactfire": "^4.2.2",
-    "reactjs-popup": "^2.0.5"
+    "reactjs-popup": "^2.0.5",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
