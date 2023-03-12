@@ -1,4 +1,6 @@
 import "./../styles/sideNavigation.css";
+import { Link } from "react-router-dom";
+
 import SideNavigationItem from "./SideNavigationItem";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import RestaurantIcon from "@mui/icons-material/Restaurant";
@@ -37,13 +39,13 @@ function SideNavigation() {
         />
       </div>
 
-      <div className="stuff">
-        <div className="navigation-profile-container">
+      <div className="side-nav-profile">
+        <Link to="/profile" className="navigation-profile-container">
           <div>
             <img src="./src/assets/king-slime.webp" alt="user pp" />
           </div>
           <p>simrat39</p>
-        </div>
+        </Link>
       </div>
     </div>
   );

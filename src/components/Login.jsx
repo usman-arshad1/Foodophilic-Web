@@ -2,16 +2,16 @@ import "./../styles/login.css";
 
 const LoginPage = () => {
   return (
-    <div className="page">
+    <div className="login-page">
         <div className="loginSection">
-            <img src = "src\assets\Food_Network_logo.svg.png" className="logo"></img>
+            <img src = "src\assets\Food_Network_logo.svg.png" className="login-logo"></img>
             <form action="" method="get" className="login">
             <input type="text" placeholder="Username"/>
             <input type="password" name="password" id="password" placeholder="Password"/>
-            <div className="forgetPassword">Forget Password?</div>
-            <button type = "submit">Login</button>
+            <div className="login-forgetPassword">Forget Password?</div>
+            <button type = "submit" className= "login-btn" >Login</button>
             </form>
-            <div className = "line" >
+            <div className = "login-line" >
             </div>
             <div id= "orText">
              OR 
@@ -23,7 +23,7 @@ const LoginPage = () => {
             </form>
             
         </div>
-        <div className="banner">There is no love 
+        <div className="login-banner">There is no love 
             sincerer than the 
             love of food
         </div>
