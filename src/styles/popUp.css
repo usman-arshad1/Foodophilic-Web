@@ -43,6 +43,10 @@
   line-height: 20px;
 }
 
+.addTag{
+  color: #C9B2FF;
+}
+
 .modal > .content {
   width: 100%;
   padding: 10px 5px;
@@ -93,6 +97,7 @@
   padding-top: 20px;
   resize: none;
   padding-bottom: 200px;
+  padding-left: 10px;
 }
 
 .actionButtons {
