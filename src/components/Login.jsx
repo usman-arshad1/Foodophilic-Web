@@ -1,6 +1,6 @@
 import "./../styles/login.css";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 //firebase
 import { getDocs, getFirestore } from "firebase/firestore";
@@ -21,6 +21,7 @@ import UserProfile from "./userProfile";
 
 
 var userCollection;
+
 function Status() {
   const firestore = useFirestore();
 

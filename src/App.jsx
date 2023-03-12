@@ -1,15 +1,15 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorView from "./views/ErrorView";
 import MainLayout from "./layouts/MainLayout";
-import Profile from "./views/Profile"
-import Main from "./views/Main"
+import Profile from "./views/Profile";
+import Main from "./views/Main";
 import "./App.css";
 import { Login } from "@mui/icons-material";
 import { LoginPage } from "./components/login";
 
 
 //firebase
-import { getDocs, getFirestore,collection } from "firebase/firestore";
+import { getDocs, getFirestore, collection } from "firebase/firestore";
 import {
   FirebaseAppProvider,
   FirestoreProvider,
@@ -26,7 +26,7 @@ var postCollection;
 const router = createBrowserRouter([
   {
     path: "/login",
-    element: <LoginPage/>
+    element: <LoginPage />,
   },
   {
     path: "/",
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Main/>,
+        element: <Main />,
       },
       {
         path: "restaurant",
@@ -57,52 +57,49 @@ const router = createBrowserRouter([
         path: "profile",
         element: <Profile user="Usman" username="ytiggiwS" numberPosts={200} />,
       },
-      
     ],
   },
-  
 ]);
+
 function Status() {
   const firestore = useFirestore();
 
   userCollection = collection(firestore, "users");
   // getDocs(userCollection).then((users) => {
-  //   users.forEach((user) =>{
+  //   users.forEach((user) => {
   //     console.log("user", user.data());
-  //   })
-  // }) 
+  //   });
+  // });
 
-  // postCollection = collection(firestore, 'posts');
+  // postCollection = collection(firestore, "posts");
   // // use for posts
   // getDocs(postCollection).then((posts) => {
-  //   posts.forEach((post) =>{
+  //   posts.forEach((post) => {
   //     console.log("post", post.data());
-  //   })
-  // }) 
+  //   });
+  // });
   //till here
-  return ;
+  return;
 }
 
-function ConnectToDB(){
+function ConnectToDB() {
   const firestoreInstance = getFirestore(useFirebaseApp());
-  return(
-  <FirestoreProvider sdk={firestoreInstance}>
-    <Status/>
-  </FirestoreProvider>)
+  return (
+    <FirestoreProvider sdk={firestoreInstance}>
+      {/* <Status /> */}
+    </FirestoreProvider>
+  );
 }
 
 function App() {
   return (
     <div className="App">
       <FirebaseAppProvider firebaseConfig={firebaseConfig}>
-        <ConnectToDB/>
-      <RouterProvider router={router} />
+        <ConnectToDB />
+        <RouterProvider router={router} />
       </FirebaseAppProvider>
     </div>
   );
-
-  
 }
-
 
 export default App;
