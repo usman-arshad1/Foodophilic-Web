@@ -21,31 +21,6 @@ import { useState, useEffect } from "react";
 function Main() {
   const [posts, setPosts] = useState([]);
 
-  // const posts = [
-  //   {
-  //     user: {
-  //       name: "Linus Tech Tips",
-  //       profileImg: "src/assets/king-slime.webp",
-  //     },
-  //     post: {
-  //       time: "3h ago",
-  //       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
-  //       foodImg: "./src/assets/pizza-with-pineapple-and-thin-crust.jpg",
-  //     },
-  //   },
-  //   {
-  //     user: {
-  //       name: "Linus Tech Tips",
-  //       profileImg: "src/assets/king-slime.webp",
-  //     },
-  //     post: {
-  //       time: "3h ago",
-  //       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
-  //       foodImg: "./src/assets/pizza-with-pineapple-and-thin-crust.jpg",
-  //     },
-  //   },
-  // ];
-
   const firestore = useFirestore();
 
   useEffect(() => {
@@ -60,18 +35,9 @@ function Main() {
     const postCollection = collection(firestore, "posts");
     getDocs(postCollection).then((res) => {
       setPosts([...res.docs]);
-      // console.log(posts.docs);
-      // posts.docs.forEach(data => console.log(data.data()))
     });
   }, []);
 
-  const displayPosts = () => {
-    console.log("----------------\n----------------");
-    posts.forEach((post) => {
-      console.log(post.data());
-    });
-  };
-  displayPosts();
   return (
     <div className="main-container">
       <div className="main-shit">
