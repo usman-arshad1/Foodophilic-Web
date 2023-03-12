@@ -36,21 +36,18 @@ function Login() {
     setInputs((values) => ({ ...values, [name]: value }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event, navi) => {
     event.preventDefault();
-    console.log(inputs.password, inputs.username);
     getDocs(userCollection).then((users)=>{
         users.forEach((user)=>{
         if(user.data().password == inputs.password && user.data().username == inputs.username)
-        console.log("logged in")
-        const navigate = useNavigate();
-         navigate('/');
-         return(<div></div>)
+        navi("/")
         })
     });
     
   };
   const firestoreInstance = getFirestore(useFirebaseApp());
+  const navigate = useNavigate();
   return (
     <FirestoreProvider sdk={firestoreInstance}>
 
@@ -61,7 +58,10 @@ function Login() {
           className="login-logo"
         ></img>
 
-        <form onSubmit={handleSubmit} method="get" className="login">
+        <form onSubmit={(event)=>{
+            handleSubmit(event,navigate);
+            
+        }} method="get" className="login">
           <input
             type="text"
             placeholder="Username"
