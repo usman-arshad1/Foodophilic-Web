@@ -1,12 +1,13 @@
+import { Link } from "react-router-dom";
 import "./../styles/sideNavigationItem.css";
 
-function SideNavigationItem({ name, icon }) {
+function SideNavigationItem({ name, icon, path }) {
   return (
     <div className="side-navigation-item">
-      <a href="">
+      <Link to={path}>
         {icon}
         <span>{name}</span>
-      </a>
+      </Link>
     </div>
   );
 }

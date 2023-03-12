@@ -13,3 +13,6 @@ dist
 stats.html
 
 .eslintcache
+
+# Firebase
+firebaseAPI.js

@@ -14,11 +14,27 @@ function SideNavigation() {
       </div>
 
       <div className="navigation-item-container">
-        <SideNavigationItem name="Home" icon={<HomeOutlinedIcon />} />
-        <SideNavigationItem name="Restaurants" icon={<RestaurantIcon />} />
-        <SideNavigationItem name="Recipes" icon={<ArticleOutlinedIcon />} />
-        <SideNavigationItem name="Messages" icon={<ForumOutlinedIcon />} />
-        <SideNavigationItem name="Reviews" icon={<ReviewsOutlinedIcon />} />
+        <SideNavigationItem name="Home" path="/" icon={<HomeOutlinedIcon />} />
+        <SideNavigationItem
+          name="Restaurants"
+          path="/restaurant"
+          icon={<RestaurantIcon />}
+        />
+        <SideNavigationItem
+          name="Recipes"
+          path="/recipe"
+          icon={<ArticleOutlinedIcon />}
+        />
+        <SideNavigationItem
+          name="Messages"
+          path="/message"
+          icon={<ForumOutlinedIcon />}
+        />
+        <SideNavigationItem
+          name="Reviews"
+          path="/review"
+          icon={<ReviewsOutlinedIcon />}
+        />
       </div>
 
       <div className="stuff">
