@@ -1,0 +1,133 @@
+.modal {
+  width: 40vw;
+  height: 85vh;
+  font-size: 12px;
+  background-color: #212121;
+  padding: 2em;
+  border-radius: 25px;
+  color: white;
+  }
+
+.modal > .header { /* Change to close later */
+  width: 100%;
+  font-size: 18px;
+  text-align: start;
+  padding: 5px;
+}
+
+.modal > .header > .closePopup {
+  width: fit-content;
+  cursor: pointer;
+}
+
+.modal > .content > .tags {
+  display: inline-flex;
+}
+
+.modal > .content > .tags > div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  height: 25px;
+  margin-right: 10px;
+  border-radius: 5px;
+  background-color: #C9B2FF;
+  border: 1px black;
+  color: black;
+
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.modal > .content {
+  width: 100%;
+  padding: 10px 5px;
+}
+
+.modal > .content > div, span {
+  padding: 2em 0;
+}
+
+.imageUpload {
+  display: flex;
+  border-radius: 25px;
+  height: 15em;
+  border: 2px dashed #767676;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageUpload > .imageButton {
+  padding: 10px;
+  justify-self: center;
+  border-radius: 25px;
+  background-color: #212121;
+  border: 1px solid #C9B2FF;
+  font-size: 15px;
+  color: #C9B2FF;
+}
+
+.imageUpload > .imageButton:hover {
+  background-color: #C9B2FF;
+  color: #212121;
+}
+
+.postBio {
+  border-radius: 25px;
+  font-size: 15px;
+  height: 30vh;
+}
+
+
+.postBio > .bioInput{
+  background-color: #212121;
+  border-radius: 25px;
+  font-size: 15px;
+  width: 100%;
+  border: 2px solid #767676;
+  color: #C9B2FF;
+  padding-bottom: 200px;
+  padding-top: 20px;
+  resize: none;
+}
+
+.actionButtons {
+  display: flex;
+  font-size: 15px;
+  justify-content: space-between;
+}
+
+.actionButtons > .actButtons{
+  border-radius: 25px;
+  padding: 15px;
+  text-align: center;
+}
+
+.actionButtons > .postButton {
+  background-color: #6750A4;
+  color: #C9B2FF;
+  width: 100px;
+  border: none;
+}
+
+.actionButtons > .postButton:hover {
+  background-color: #C9B2FF;
+  color: #6750A4;
+}
+
+
+.actionButtons > .locationButton {
+  color: #C9B2FF;
+  background-color: #212121;
+  border: 1px solid #C9B2FF;
+  width: 150px;
+}
+
+.actionButtons > .locationButton:hover {
+  color: #212121;
+  background-color: #C9B2FF;
+}
