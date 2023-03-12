@@ -1,6 +1,7 @@
 import "./../styles/main.css";
 
 import { Post } from "../components/PostCard";
+import CreatePost from "../components/CreatePost";
 import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
@@ -44,13 +45,14 @@ function Main() {
               </IconButton>
             </div>
           </div>
-          <Button
+          <CreatePost />
+          {/* <Button
             variant="contained"
             sx={{ borderRadius: "25px", backgroundColor: "green" }}
             startIcon={<AddCircleOutlineOutlinedIcon />}
           >
             Create
-          </Button>
+          </Button> */}
         </div>
       </div>
 
