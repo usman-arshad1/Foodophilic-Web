@@ -11,11 +11,14 @@ const CreatePost = () => {
   const [tags, setTags] = useState([]);
 
   const [selectedFile, setSelectedFile] = useState();
+  const [imageLink, setImageLink] = useState();
 	const [isFilePicked, setIsSelected] = useState(false);
 
   const changeImageHandler = (event) => {
     // console.log(URL.createObjectURL(event.target.files[0]))
-		setSelectedFile(URL.createObjectURL(event.target.files[0]));
+
+		setSelectedFile(event.target.files[0]);
+    setImageLink(URL.createObjectURL(event.target.files[0]));
 		setIsSelected(true);
 	};
 
@@ -60,8 +63,7 @@ const CreatePost = () => {
           <form className="content" onSubmit={handleSubmit}>
             <div className='imageUpload createItem'>
               <UploadImageFile />
-              <img src={selectedFile}></img>
-              {/* <div className='imageButton'>+ Upload Image</div> */}
+              <img src={imageLink}></img>
             </div>
             <div className='tagsTitle'>Tags</div>
             <span className='tags createItem'>
@@ -73,7 +75,7 @@ const CreatePost = () => {
                 }
                 <div className='addTagBox'>
                   <input type="text" placeholder='Add tag...' className='inputTag' maxLength={20} onChange={handleChangeMessage} value={message}></input>
-                  <AddCircleOutlineOutlinedIcon className='addTag' onClick={() => { addTag(); }}></AddCircleOutlineOutlinedIcon> {/*Change function to add tag*/}
+                  <AddCircleOutlineOutlinedIcon className='addTag' onClick={() => { addTag(); }}></AddCircleOutlineOutlinedIcon>
                 </div>
               </span>
             </span>
