@@ -46,12 +46,14 @@ function Login() {
         if (
           user.data().password == inputs.password &&
           user.data().username == inputs.username
-        )
-        console.log(user.data());
-        UserProfile.setFirstName(user.data().firstName);
-        UserProfile.setUsername(user.data().username)
-        UserProfile.setUserID(user.id)
-          navi("/");
+        ){
+            
+            UserProfile.setFirstName(user.data().firstName);
+            UserProfile.setUsername(user.data().username)
+            UserProfile.setUserID(user.id)
+              navi("/");
+        }
+        
       });
     });
   };

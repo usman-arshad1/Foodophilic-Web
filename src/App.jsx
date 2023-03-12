@@ -10,19 +10,7 @@ import Main from "./views/Main";
 
 import "./App.css";
 import { Login } from "@mui/icons-material";
-import { LoginPage } from "./components/login";
 
-
-//firebase
-import { getDocs, getFirestore, collection } from "firebase/firestore";
-import {
-  FirebaseAppProvider,
-  FirestoreProvider,
-  useFirestoreDocData,
-  useFirestore,
-  useFirebaseApp,
-  useFirestoreCollection,
-} from "reactfire";
 
 import { firebaseConfig } from "../firebaseAPI";
 

@@ -3,7 +3,7 @@ import "./../styles/profile.css";
 import UserProfile from "../components/userProfile";
 
 function Profile({ user, username, numberPosts }) {
-  console.log(UserProfile.getFirstName(),UserProfile.getUserID());
+  
   const posts = [
     {
       user: {
@@ -57,7 +57,7 @@ function Profile({ user, username, numberPosts }) {
               </div>
             </div>
 
-            <div className="username">{UserProfile.getUsername()}</div>
+            <div className="username">@{UserProfile.getUsername()}</div>
 
             <div className="bio">
               I am Sim, the Simmiest of rattiest of all Sims, ruler of
@@ -69,11 +69,11 @@ function Profile({ user, username, numberPosts }) {
 
       <div className="divider"></div>
 
-      <div className="user-posts">
+      {/* <div className="user-posts">
         {posts.map((post) => (
           <Post user={post.user} post={post.post} />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }

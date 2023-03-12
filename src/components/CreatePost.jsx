@@ -10,6 +10,8 @@ import { addDoc, getFirestore,collection } from "firebase/firestore";
 import { getStorage, ref, uploadBytes } from "firebase/storage";
 import { firebaseConfig } from "../../firebaseAPI";
 
+import UserProfile from './userProfile';
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
@@ -57,10 +59,10 @@ const CreatePost = () => {
       postType: "review",
       tags: tagsText,
       user: {
-        firstName: "GET FIRST NAME",
-        userName: "GET USER NAME"
+        firstName: UserProfile.getFirstName(),
+        userName: UserProfile.getUsername()
       },
-      userID: "GET USER ID"
+      userID: UserProfile.getUserID()
     }
     addDoc(dbRef, data).then(docRef => {
       console.log("Document added successfully");
