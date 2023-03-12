@@ -13,6 +13,11 @@ const CreatePost = () => {
     setMessage(event.target.value);
   }
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert(`The name you entered was: ${message}`)
+  }
+
   function addTag() {
     setTags([...tags, {text: {message}, id: uuidv4()}]);
     // console.log(tags);
@@ -32,7 +37,7 @@ const CreatePost = () => {
               <CloseOutlinedIcon></CloseOutlinedIcon>
             </div>
           </div>
-          <form className="content">
+          <form className="content" onSubmit={handleSubmit}>
             <div className='imageUpload createItem'>
               {/* <TODO>Upload image UI</TODO> */}
               <div className='imageButton'>+ Upload Image</div>
