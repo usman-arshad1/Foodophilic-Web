@@ -1,7 +1,7 @@
 .main-layout {
   width: 100%;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 278px auto;
 }
 
 .outlet-container {
