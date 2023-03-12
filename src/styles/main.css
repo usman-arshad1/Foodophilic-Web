@@ -1,3 +1,25 @@
 .search{
-    background-color: gray;
+    background: #928da3;
+    width: fit-content;
+    border-radius: 28px;
+
+    position: relative;
+    left: 30%;
+    top: 10px;
+}
+
+.post{
+    background: gray;
+    outline-style: hidden;
+    width: fit-content;
+    border-radius: 28px;
+
+    position: relative;
+    left: 60%;
+    top: -31px;
+}
+
+.post span{
+    padding-left: 5px;
+    color: black;
 }
