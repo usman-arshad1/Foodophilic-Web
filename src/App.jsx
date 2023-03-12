@@ -5,6 +5,8 @@ import Profile from "./views/Profile"
 import "./App.css";
 import { Login } from "@mui/icons-material";
 import { LoginPage } from "./components/login";
+import { firebaseConfig } from "../firebaseAPI";
+import { FirebaseAppProvider, FirestoreProvider, useFirestoreDocData, useFirestore, useFirebaseApp } from 'reactfire';
 
 const router = createBrowserRouter([
   {
