@@ -92,7 +92,7 @@ const CreatePost = () => {
       {close => (
         <div className="modal">
           <div className="header">
-            <div className="button closePopup" onClick={() => { close(); }}>
+            <div className="button closePopup" onClick={() => { close();}}>
               <CloseOutlinedIcon></CloseOutlinedIcon>
             </div>
           </div>
@@ -121,7 +121,7 @@ const CreatePost = () => {
             </div>
             <div className='actionButtons createItem'>
               <div className='actButtons locationButton'>Add Location</div>
-              <button className='actButtons postButton'>Post</button>
+              <button className='actButtons postButton' onClick={() => { close();}}>Post</button>
             </div>
           </form>
         </div>
