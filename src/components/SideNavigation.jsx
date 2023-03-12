@@ -18,7 +18,7 @@ function SideNavigation() {
   return (
     <div className="side-navigation">
       <div className="navigation-logo">
-        <img src="src\assets\logo.png" alt="logo image" />
+        <img src="src\assets\logo2.png" alt="logo image" />
       </div>
 
       <div className="navigation-item-container">
