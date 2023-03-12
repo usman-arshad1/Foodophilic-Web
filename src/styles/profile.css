@@ -23,7 +23,7 @@ body {
 .edit{
     position:relative;
     top: -70px;
-    right: -90%;
+    right: -80%;
 }
 
 .profile_name {
@@ -34,13 +34,15 @@ body {
 }
 
 .numberOfPosts {
-    position: relative;
-
     font-weight: 700;
     font-size: 20px;
     line-height: 24px;
     display: flex;
     align-items: center;
+
+    position: relative;
+    left: 300px;
+    top: -125px;
 }
 
 .edit button{
@@ -49,4 +51,16 @@ body {
     border: 1px solid #C9B2FF;
     width: 150px;
     border-radius: 25px;
+    padding: 10px;
+}
+
+.edit button:hover{
+    background-color: #C9B2FF;
+    color: black;
+}
+
+.username{
+    position: relative;
+    top: -78px;
+    left: 20px;
 }
